@@ -54,3 +54,31 @@
 @import "spree/frontend/views/spree/shared/color_select";
 @import "spree/frontend/views/spree/shared/dropdown";
 @import "spree/frontend/views/spree/shared/delete_address_popup";
+
+.main-nav-bar {
+    &-item {
+      text-transform: none;
+      &:hover {
+         text-decoration: none;
+      }
+    }
+    &-category-button {
+        border-bottom: 0;
+    }
+}
+
+.font-weight-500 {
+    font-weight: 500 !important;
+}
+
+.homepage-hero-image-text {
+    width: 506px;
+    text-align: start;
+}
+
+.homepage-taxon-box-text h3,
+.homepage-bottom-box-inner {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}

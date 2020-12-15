@@ -7,11 +7,11 @@
     alt="<%= Spree.t('homepage.summer_collection')%>" />
 
   <div class="hero-content">
-    <div class="homepage-hero-image-text mb-2 mx-auto pb-3 pb-md-4">
-      <%= Spree.t('homepage.summer_collection') %>
+    <div class="homepage-hero-image-text text-uppercase mb-2 mx-auto pb-3 pb-md-4">
+      <span>Full Spectrum Olej Konopny</span>
     </div>
     <div>
-      <%= link_to Spree.t('homepage.shop_now'), spree.products_path, class: 'btn btn-primary spree-btn px-5' %>
+      <%= link_to "KUP TERAZ", spree.products_path, class: 'btn btn-primary spree-btn px-5 font-weight-500' %>
     </div>
   </div>
 </div>
@@ -25,10 +25,10 @@
           <img class="w-100 lazyload"
             data-src="<%= asset_path('homepage/category_banner_upper.jpg') %>"
             data-srcset="<%= image_source_set('homepage/category_banner_upper') %>"
-            alt="<%= Spree.t('homepage.men')%>" />
+            alt="Susz konopny" />
 
           <div class="homepage-taxon-box-text">
-            <h3><%= Spree.t('homepage.men') %></h3>
+            <h3>Susz konopny</h3>
           </div>
         <% end %>
       </div>
@@ -38,10 +38,10 @@
           <img class="w-100 lazyload"
             data-src="<%= asset_path('homepage/category_banner_lower.jpg') %>"
             data-srcset="<%= image_source_set('homepage/category_banner_lower') %>"
-            alt="<%= Spree.t('homepage.sportswear')%>" />
+            alt="Kosmetyki naturalne" />
 
-          <div class="homepage-taxon-box-text" role="img" aria-label="<%= Spree.t('homepage.sportswear') %>">
-            <h3><%= Spree.t('homepage.sportswear') %></h3>
+          <div class="homepage-taxon-box-text" role="img" aria-label="Kosmetyki naturalne">
+            <h3>Kosmetyki naturalne</h3>
           </div>
         <% end %>
       </div>
@@ -55,10 +55,10 @@
           <img class="w-100 lazyload"
             data-src="<%= asset_path('homepage/big_category_banner.jpg') %>"
             data-srcset="<%= image_source_set('homepage/big_category_banner') %>"
-            alt="<%= Spree.t('homepage.women')%>" />
+            alt="Oleje CBD" />
 
           <div class="homepage-taxon-box-text">
-            <h3><%= Spree.t('homepage.women') %></h3>
+            <h3>Oleje CBD</h3>
           </div>
         <% end %>
       </div>
@@ -93,12 +93,9 @@
             data-srcset="<%= image_source_set('homepage/promo_banner_left') %>"
             alt="<%= Spree.t('homepage.new_collection')%>" />
 
-          <div class="homepage-bottom-box-inner" role="img" aria-label="<%= Spree.t('homepage.new_collection') %>">
-            <div class="homepage-bottom-box-inner-small-text">
-              <%= Spree.t('homepage.new_collection') %>
-            </div>
-            <div class="homepage-bottom-box-inner-big-text">
-              <%= Spree.t('homepage.streetstyle') %>
+          <div class="homepage-bottom-box-inner" role="img">
+            <div class="homepage-bottom-box-inner-big-text text-uppercase">
+              Preorder
             </div>
           </div>
         </div>
@@ -114,11 +111,8 @@
             alt="<%= Spree.t('homepage.summer_sale')%>" />
 
           <div class="homepage-bottom-box-inner">
-            <div class="homepage-bottom-box-inner-small-text">
-              <%= Spree.t('homepage.summer_sale') %>
-            </div>
-            <div class="homepage-bottom-box-inner-big-text">
-              <%= Spree.t('homepage.up_to_60') %>
+            <div class="homepage-bottom-box-inner-big-text text-uppercase">
+              Promocje
             </div>
           </div>
         </div>
