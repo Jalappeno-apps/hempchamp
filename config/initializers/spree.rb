@@ -12,6 +12,7 @@
 Spree.config do |config|
   config.currency = "PLN"
   config.company = true
+  config.logo = "hempchamp_logo.png"
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
