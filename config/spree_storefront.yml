@@ -1,29 +1,21 @@
 default:
   navigation:
     - title: Produkty
-      subtitle: Categories
-      url: /t/women
+      subtitle: Kategorie
+      url: /products
       items:
-        - :title: Skirts
-          :url: /t/women/skirts
-        - :title: Dresses
-          :url: /t/women/dresses
-        - :title: Shirts and Blouses
-          :url: /t/women/shirts-and-blouses
-        - :title: Sweaters
-          :url: /t/women/sweaters
-        - :title: Tops and T-shirts
-          :url: /t/women/tops-and-t-shirts
-        - :title: Jackets and Coats
-          :url: /t/women/jackets-and-coats
+        - :title: Olejki
+          :url: /t/olejki
+        - :title: Susz
+          :url: /t/susz
+        - :title: Kosmetyki
+          :url: /t/kosmetyki
       promo_banners:
-        - subtitle: New collection
-          title: Summer 2019
-          url: /t/new-collection/summer-2019
+        - title: OLEJKI
+          url: /t/olejki
           image: 'meganav/promo_banner_left-first-category.jpg'
-        - subtitle: Special Offers
-          title: Get up to 30% off
-          url: /t/special-offers/30-off
+        - title: KOSMETYKI
+          url: /t/kosmetyki
           image: 'meganav/promo_banner_right-first-category.jpg'
     - title: O Hemp Champ
       subtitle: Categories

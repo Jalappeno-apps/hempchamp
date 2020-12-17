@@ -1,0 +1,99 @@
+pl:
+  activerecord:
+    attributes:
+      spree/product:
+        less_than+50+zł: less_than 50zl
+  spree:
+    save_and_continue: Kontynuuj
+    added_to_cart: PRODUKT DODANO DO KOSZYKA!
+    search: Szukaj...
+    total: Suma
+    subtotal: Łączna kwota
+    pdp:
+      checkout: Przejdź do kasy
+      view_cart: Koszyk
+    cart_page:
+      header: KOSZYK
+      empty_info: Twój koszyk jest pusty.
+    order_mailer:
+      subtotal: Wartość zamówionych produktów brutto
+      total: Razem zapłacono
+      confirm_email:
+        subtotal: Wartość zamówionych produktów brutto
+        total: Razem zapłacono
+        worker_instructions: Potwierdzenie zamówienia
+        instructions: Oto potwierdzenie zamówienia
+        dear_worker: Szanowni Państwo
+        dear_customer: Szanowny kliencie!
+        order_summary: Szczegóły
+        store_team: Sklep BHPartykuly.pl
+    go_to_category: go
+    homepage:
+      accept: ROZUMIEM I AKCEPTUJĘ
+      shop_now: Kup Teraz
+      produced_in: Polski producent
+      safe_pay: Bezpieczne płatności
+      reliable_delivery: Niezawodność dostaw
+      returns: Zwroty i współpraca
+      main_banner: Main banner
+      interplus:
+        p1: Higienicznie i na błysk - takie efekty porządków są pożądane w każdym domu czy biurze. <br/>Interplus dostarcza podstawowe artykuły czystościowe oraz produkty do profesjonalnych prac porządkowych.
+        p2: Dbamy o każdy szczegół, aby w naszej ofercie stale były dostępne wszystkie niezbędne środki czyszczące, odzież i obuwie robocze oraz artykuły BHP. Od apteczek, przez rękawice ochronne, aż po znaki i instrukcje BHP. Wszystko w jednym sklepie stworzonym dla klientów indywidualnych oraz specjalistów oczekujących produktów najwyższej jakości, spełniających najsurowsze standardy i wymagania.
+        title: Interplus Sp. z o.o.
+      red_box:
+        title: Ochrona przed COVID-19.
+        button: SPRAWDŹ
+      category: 
+        title: Kategorie
+        c1: Ubrania i obuwie <br/> robocze
+        c2: Rękawice <br/> ochronne
+        c3: Środki czystości <br/> Forlux
+        c4: Apteczki i taśmy <br/> ostrzegawcze
+        c5: Ochrona <br/> osobista
+        c6: COVID-19
+      forlux_section:
+        title: Forlux
+        p1: Numer 1 wśród Polskich producentów środków czystości!
+        p2: Oferowane przez nas środki czystości są silnie skoncentrowane, dzięki czemu wystarczają na dłużej,
+        p3: co mocno obniża koszty sprzątania. Czytelne oznaczenia pojemności i dozowania ułatwiają rozcieńczanie i ich stosowanie. Nasze produkty stale są dostępne w ofercie kilkudziesięciu dystrybutorów w całej Polsce, a finalnymi klientami są firmy, restauracje, szkoły, instytucje, warsztaty samochodowe i wiele innych podmiotów. 
+        p4: Brzmi zachęcająco? Zapraszamy serdecznie Państwa do zapoznania się z naszymi produktami!
+      forlux_products:
+        title: ŚRODKI CZYSTOŚCI FORLUX
+        button: WIĘCEJ
+      offer:
+        title: Oferujemy rabat X % na pierwsze zakupy, <br/>za zapisanie się do Newslettera!
+        button: ZAPISZ SIĘ
+    footer:
+      my_account: Moje konto
+      gdpr: RODO
+      tos: Regulamin
+      button: ZADZWOŃ
+      contact:
+        email: Email
+        name_surname: Imię i nazwisko
+        name_surname_placeholder: Imię i nazwisko
+        nip: NIP
+        company: Nazwa firmy
+        message: Wiadomość
+    spree_reviews:
+      show_identifier: Pokaż identyfikator
+    progressbar:
+      log_in: Zaloguj się
+      fill_details: Twoje dane
+      shipment: Dostawa
+      order_review: Podsumowanie
+    returns_page:
+      title: "Odstąpienie od umowy"
+      subtitle: "Zasady odstąpienia od umowy"
+      phone_number: "Biuro: tel. "
+      first_step: "W ciągu 14 dni od otrzymania przesyłki skontaktuj się z nami 
+      <br> 
+      i poinformuj nas o chęci odstąpienia od umowy."
+      second_step: "Po rozmowie z nami, pobierz formularz, wydrukuj i wypełnij."
+      third_step: "Przed upływem 14 dni od momentu zgłoszenia nadaj
+      <br>
+      przesyłkę z wypełnionym formularzem na poniższy adres: "
+      with_a_note: "Z dopiskiem: &rdquo;ZWROT&rdquo;"
+      tos_details: "Szczegółowe informacje dotyczące odstąpienia od umowy<br>
+znajdziesz w naszym Regulaminie."
+      tos: Regulamin
