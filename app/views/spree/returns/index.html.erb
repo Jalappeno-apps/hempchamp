@@ -1,0 +1,38 @@
+<div class="container">
+    <h3 class="returns__title text-primary pt-5"><%= Spree.t("returns_page.title") %></h3>
+</div>
+<h4 class="returns__subtitle text-center pt-5"><%= Spree.t("returns_page.subtitle") %></h4>
+<div class="container pt-5 d-flex justify-content-center flex-column">
+    <div class="row flex-column">
+        <div class="returns__step d-flex justify-content-around align-items-center m-auto">
+            <div class="returns__step__number"><span>1</span></div>
+            <div class="returns__step__content"><%= Spree.t("returns_page.first_step").html_safe %></div>
+        </div>
+        <div class="returns__step__content returns__step__content--offset pt-5 pb-5 text-center position-relative"><%= Spree.t("returns_page.phone_number") %>  +48 796 690 240</div>
+        <div class="returns__step d-flex pb-5 justify-content-around align-items-center m-auto">
+            <div class="returns__step__number"><span>2</span></div>
+            <div class="returns__step__content"><%= Spree.t("returns_page.second_step") %></div>
+        </div>
+        <div class="returns__step d-flex justify-content-around align-items-center m-auto">
+            <div class="returns__step__number"><span>3</span></div>
+            <div class="returns__step__content"><%= Spree.t("returns_page.third_step").html_safe %></div>
+        </div>
+        <div class="text-center">
+            <div class="returns__step__content text-primary returns__step__content--offset pt-5 text-left position-relative" style="display: inline-block">
+
+            </div>
+        </div>
+        <div class="returns__step pt-5 d-flex justify-content-around align-items-center m-auto">
+            <div class="returns__step__number"></div>
+            <div class="returns__step__content text-primary"><%= Spree.t("returns_page.with_a_note").html_safe %></div>
+        </div>
+        <div class="returns__step d-flex flex-column justify-content-left align-items-left m-auto">
+            <div class="returns__step__withdrawal pt-5">
+                <%= Spree.t("returns_page.tos_details").html_safe %>
+            </div>
+            <div class="d-flex m-5 justify-content-center">
+                <%= link_to Spree.t("returns_page.tos"), :tos, class: "text-center text-white btn btn-primary spree-btn px-5" %>
+            </div>
+        </div>
+    </div>
+</div>
