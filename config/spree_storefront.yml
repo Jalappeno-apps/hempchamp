@@ -27,41 +27,7 @@ default:
           image: 'meganav/promo_banner_right-first-category.jpg'
     - title: O Hemp Champ
       subtitle: Categories
-      url: /t/men
-      items:
-        - :title: Shirts
-          :url: /t/men/shirts
-        - :title: T-shirts
-          :url: /t/men/t-shirts
-        - :title: Sweaters
-          :url: /t/men/sweaters
-        - :title: Jackets and Coats
-          :url: /t/men/jackets-and-coats
-      promo_banners:
-        - subtitle: New collection
-          title: Summer 2019
-          url: /t/new-collection/summer-2019
-          image: 'meganav/promo_banner_left-second-category.jpg'
-        - subtitle: Special Offers
-          title: Get up to 30% off
-          url: /t/special-offers/30-off
-          image: 'meganav/promo_banner_right-second-category.jpg'
-    - title: Co to olej CBD?
+      url: "#about"
+    - title: Więcej o CBD
       subtitle: Categories
-      url: /t/sportswear
-      items:
-        - :title: Tops
-          :url: /t/sportswear/tops
-        - :title: Sweatshirts
-          :url: /t/sportswear/sweatshirts
-        - :title: Pants
-          :url: /t/sportswear/pants
-      promo_banners:
-        - subtitle: New collection
-          title: Summer 2019
-          url: /t/new-collection/summer-2019
-          image: 'meganav/promo_banner_left-third-category.jpg'
-        - subtitle: Special Offers
-          title: Get up to 30% off
-          url: /t/special-offers/30-off
-          image: 'meganav/promo_banner_right-third-category.jpg'
+      url: "#faq"
