@@ -297,6 +297,11 @@ GEM
       spree_core (= 4.1.12)
       spree_frontend (= 4.1.12)
       spree_sample (= 4.1.12)
+    spree_analytics_trackers (2.0.0)
+      deface (~> 1.0)
+      spree_backend (>= 4.1.0, < 5.0)
+      spree_core (>= 4.1.0, < 5.0)
+      spree_extension
     spree_api (4.1.12)
       doorkeeper (~> 5.2, >= 5.2.1)
       fast_jsonapi (~> 1.5)
@@ -432,6 +437,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   spree (~> 4.1)
+  spree_analytics_trackers
   spree_auth_devise (~> 4.2)
   spree_gateway (~> 3.9)
   spree_i18n!

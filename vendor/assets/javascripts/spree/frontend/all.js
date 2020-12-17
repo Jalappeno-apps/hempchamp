@@ -10,3 +10,4 @@
 //= require spree/frontend
 
 //= require_tree .
+//= require spree/frontend/add_to_cart_analytics

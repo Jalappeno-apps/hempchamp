@@ -32,6 +32,7 @@ gem 'spree_i18n', github: 'archetype2142/spree_i18n', branch: 'master'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'mini_racer'
+gem 'spree_analytics_trackers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
