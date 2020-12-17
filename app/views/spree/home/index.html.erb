@@ -69,17 +69,23 @@
 
 <div data-product-carousel data-product-carousel-taxon-id='bestsellers' class="my-3"></div>
 
-<div class="homepage-fashion-trends-box mb-3">
-  <div class="text-center">
-    <div class="homepage-fashion-trends-box-summer-text mb-1"><%= Spree.t('homepage.summer_2019') %></div>
-    <div class="homepage-fashion-trends-box-fashion-trends-text mb-2"><%= Spree.t('homepage.fashion_trends') %></div>
-    <div class="homepage-fashion-trends-box-description-text text-center mb-3">
-      <%= Spree.t('homepage.fashion_trends_note') %>
+<div class="container">
+  <div class="row pt-5 pb-5 mt-5 mb-5">
+    <div class="col-sm-3 pb-5 d-flex justify-content-center align-items-center">
+      <%= image_tag 'homepage/hempleaf.png', class: "w-50 w-sm-100" %>
     </div>
-    <%= link_to Spree.t('homepage.read_more'), spree.nested_taxons_path('trending'), class: 'btn px-5 spree-btn btn-outline-primary' %>
+    <div class="col-sm-6">
+          <h2 class="text-center">O Hemp Champ</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          <div class="text-center">
+            <%= link_to "KUP TERAZ", spree.products_path, class: 'btn btn-primary spree-btn px-5 font-weight-500' %>
+          </div>
+    </div>
+    <div class="col-sm-3 pt-5 d-flex justify-content-center align-items-center">
+      <%= image_tag 'homepage/hempleaf.png', class: "hempleaf--rotated w-50 w-sm-100" %>
+    </div>
   </div>
 </div>
-
 
 <div data-product-carousel data-product-carousel-taxon-id='trending' class="mb-3"></div>
 

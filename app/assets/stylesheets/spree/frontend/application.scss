@@ -82,3 +82,13 @@
     color: black;
     border: 3px solid black;
 }
+
+.hempleaf--rotated {
+    transform: rotate(180deg);
+}
+
+@media (min-width: 576px) {
+    .w-sm-100 {
+        width: 100%!important;
+    }
+}
