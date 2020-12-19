@@ -55,6 +55,8 @@
 @import "spree/frontend/views/spree/shared/dropdown";
 @import "spree/frontend/views/spree/shared/delete_address_popup";
 
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&display=swap');
+
 .main-nav-bar {
     &-item {
       text-transform: none;
@@ -188,5 +190,29 @@
     &__image {
         margin: 0 auto;
         margin-top: 75px;
+    }
+}
+
+.card {
+    background-color: $primary-background;
+    border: 0;
+}
+
+.card-header {
+    background-color: initial;
+    border: 0;
+    font-family: 'Arimo', sans-serif;
+    .btn-link {
+        color: #e9a200 !important;
+    }
+}
+
+.card-body {
+    font-family: 'Arimo', sans-serif;
+}
+
+.features {
+    h3 {
+        color: #484848;
     }
 }

@@ -5,7 +5,7 @@
         <% if spree_navigation_data.any? %>
           <% spree_navigation_data.first(3).each do |root| %>
             <div class="col-3">
-              <div class="footer-spree-label">
+              <div class="footer-spree-label font-weight-bold">
                 <%= link_to root[:title], root[:url] %>
               </div>
               <% if  root[:items].present? %>
@@ -18,7 +18,7 @@
         <% end %>
         <% if spree.respond_to?(:account_path) %>
           <div class="col-3">
-            <div class="footer-spree-label">
+            <div class="footer-spree-label font-weight-bold">
               <%= Spree.t('nav_bar.my_account') %>
             </div>
             <div class="pt-2">
