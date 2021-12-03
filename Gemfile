@@ -12,7 +12,7 @@ gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.4.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -22,17 +22,19 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'spree', '~> 4.1'
-gem 'spree_auth_devise', '~> 4.2'
 gem 'spree_gateway', '~> 3.9'
+gem 'spree_backend', '~> 4.1'
+gem 'spree_auth_devise', '~> 4.0.0'
+gem 'spree_frontend'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'canonical-rails', '0.2.9'
-gem 'spree_i18n', github: 'archetype2142/spree_i18n', branch: 'master'
+# gem 'spree_i18n', github: 'archetype2142/spree_i18n', branch: 'master'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'mini_racer'
-gem 'spree_analytics_trackers'
+# gem 'spree_analytics_trackers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -32,10 +32,10 @@ end
 # Spree::Api::Dependencies.storefront_cart_serializer = 'MyRailsApp::CartSerializer'
 
 Spree.user_class = "Spree::User"
-I18n.default_locale = 'pl'
-SpreeI18n::Config.available_locales = [:en, :pl] 
-Spree::Frontend::Config[:locale] = :pl
+# I18n.default_locale = 'pl'
+# SpreeI18n::Config.available_locales = [:en, :pl] 
+# Spree::Frontend::Config[:locale] = :pl
 # Spree::Backend::Config[:locale] = :pl
 
-Rails.application.config.spree.payment_methods << Spree::PaymentMethod::Payu
+# Rails.application.config.spree.payment_methods << Spree::PaymentMethod::Payu
 Spree::PermittedAttributes.address_attributes << :nip
