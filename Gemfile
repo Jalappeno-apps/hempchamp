@@ -17,6 +17,8 @@ gem 'spree_gateway', '~> 3.9'
 gem 'spree_backend', '~> 4.1'
 gem 'spree_auth_devise', '~> 4.0.0'
 gem 'spree_frontend'
+gem 'spree_emails'
+
 # gem 'spree_i18n', github: 'archetype2142/spree_i18n', branch: 'master'
 gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'spree_analytics_trackers'

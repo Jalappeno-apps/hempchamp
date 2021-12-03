@@ -323,6 +323,10 @@ GEM
       state_machines-activerecord (~> 0.6)
       stringex
       validates_zipcode
+    spree_emails (4.3.0)
+      actionmailer
+      spree_core (>= 4.3.0)
+      sprockets (>= 4.0)
     spree_extension (0.0.9)
       activerecord (>= 4.2)
       spree_core
@@ -415,6 +419,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.0.0)
   spree_backend (~> 4.1)
+  spree_emails
   spree_frontend
   spree_gateway (~> 3.9)
   spring
