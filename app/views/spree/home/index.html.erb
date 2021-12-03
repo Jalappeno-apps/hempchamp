@@ -1,0 +1,200 @@
+<% @body_id = 'home' %>
+
+<div class="homepage-hero-image mb-3 position-relative">
+  <img class="lazyload hero-image position-absolute"
+    data-src="<%= asset_path('homepage/main_banner.jpg') %>"
+    data-srcset="<%= image_source_set('homepage/main_banner') %>"
+    alt="HempChamp olejek" />
+
+  <div class="hero-content">
+    <div class="homepage-hero-image-text text-uppercase mb-2 mx-auto pb-3 pb-md-4">
+      <span>Full Spectrum Olej Konopny</span>
+    </div>
+    <div>
+      <%= link_to "KUP TERAZ", spree.products_path, class: 'btn btn-primary spree-btn px-5 font-weight-500' %>
+    </div>
+  </div>
+</div>
+
+<div class="container features pt-5 pb-5">
+  <h3 class="pb-4 text-center font-weight-light">produkty Hemp Champ pomogą Ci osiągnąć:</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-3 mb-3 d-flex flex-column align-items-center">
+      <%= image_tag 'homepage/smiley.png', class: 'w-25 mb-2' %>
+      <span>lepsze samopoczucie</span>
+    </div>
+    <div class="col-md-3 mb-3 d-flex flex-column align-items-center">
+      <%= image_tag 'homepage/lotus.png', class: 'w-25 mb-2' %>
+      <span>odprężenie i relax</span>
+    </div>
+    <div class="col-md-3 mb-3 d-flex flex-column align-items-center">
+      <%= image_tag 'homepage/muscles.png', class: 'w-25 mb-2' %>
+      <span>szybszą regenerację</span>
+    </div>
+    <div class="col-md-3 mb-3 d-flex flex-column align-items-center">
+      <%= image_tag 'homepage/moon.png', class: 'w-25 mb-2' %>
+      <span>przespane noce</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+
+      <div class="homepage-taxon-box mb-3">
+        <%= link_to spree.nested_taxons_path('men') do %>
+          <img class="w-100 lazyload"
+            data-src="<%= asset_path('homepage/category_banner_upper.jpg') %>"
+            data-srcset="<%= image_source_set('homepage/category_banner_upper') %>"
+            alt="Susz konopny" />
+
+          <div class="homepage-taxon-box-text">
+            <h3>Susz konopny</h3>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="homepage-taxon-box">
+        <%= link_to spree.nested_taxons_path('sportswear') do %>
+          <img class="w-100 lazyload"
+            data-src="<%= asset_path('homepage/category_banner_lower.jpg') %>"
+            data-srcset="<%= image_source_set('homepage/category_banner_lower') %>"
+            alt="Kosmetyki naturalne" />
+
+          <div class="homepage-taxon-box-text" role="img" aria-label="Kosmetyki naturalne">
+            <h3>Kosmetyki</h3>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="col-6 d-flex flex-column">
+
+      <div class="homepage-taxon-box flex-grow-1">
+        <%= link_to spree.nested_taxons_path('women') do %>
+          <img class="w-100 lazyload"
+            data-src="<%= asset_path('homepage/big_category_banner.jpg') %>"
+            data-srcset="<%= image_source_set('homepage/big_category_banner') %>"
+            alt="Oleje CBD" />
+
+          <div class="homepage-taxon-box-text">
+            <h3>Oleje CBD</h3>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-product-carousel data-product-carousel-taxon-id='bestsellers' class="my-3"></div>
+
+<div class="container" id="about">
+  <div class="row pt-5 mt-5 mb-5">
+    <div class="col">
+      <h2 class="text-center text-uppercase mb-4">O Hemp Champ</h2>
+      <p class="mb-4">Sklep powstał z myślą o propagowaniu zdrowego, aktywnego trybu życia z podkreśleniem najważniejszego w nim czynnika, którego często nam wszystkim brakuje - <b>odpowiedniego odpoczynku.</b><br/><br/> 
+
+      W dzisiejszych czasach, presja zawodowa czy społeczna wpływa na nas negatywnie pod kątem snu czy samopoczucia. I może dawać nam się we znaki zarówno fizycznie jak i psychicznie.<br/><br/>
+      
+      Dlatego więc, stworzyliśmy produkty oparte o CBD, które będą odpowiednim rozwiązaniem dla młodych, aktywnych ludzi, niebojących się spróbować innowacyjnych form poprawienia samopoczucia.<br/><br/>
+      
+      Popraw jakość życia, wrzuć na luz i odpocznij jak prawdziwy champion!</p>
+      <div class="text-center">
+        <%= link_to "KUP TERAZ", spree.products_path, class: 'btn btn-primary spree-btn px-5 font-weight-500' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="faq">
+  <div class="row">
+  <div class="accordion w-100 pb-5" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              CO TO JEST CBD?
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              CO TO JEST SYSTEM ENDOKANNABINOIDOWY (ECS)?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              CZY CBD JEST PRZETESTOWANE LABORATORYJNIE?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-product-carousel data-product-carousel-taxon-id='trending' class="mb-3"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <%= link_to asset_path("who.pdf"), target: '_blank' do %>
+        <div class="homepage-bottom-box text-center mb-3">
+          <img class="w-100 lazyload"
+            data-src="<%= asset_path('homepage/promo_banner_left.jpg') %>"
+            data-srcset="<%= image_source_set('homepage/promo_banner_left') %>"
+            alt="Raport WHO" />
+
+          <div class="homepage-bottom-box-inner" role="img">
+            <div class="homepage-bottom-box-inner-big-text text-uppercase">
+              Raport WHO
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <%= link_to spree.nested_taxons_path('summer-sale') do %>
+        <div class="homepage-bottom-box text-center mb-3">
+          <img class="w-100 lazyload"
+            data-src="<%= asset_path('homepage/promo_banner_right.jpg') %>"
+            data-srcset="<%= image_source_set('homepage/promo_banner_right') %>"
+            alt="Promocje" />
+
+          <div class="homepage-bottom-box-inner">
+            <div class="homepage-bottom-box-inner-big-text text-uppercase">
+              Promocje
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

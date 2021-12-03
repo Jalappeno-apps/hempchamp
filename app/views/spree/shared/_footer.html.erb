@@ -1,0 +1,47 @@
+<% cache spree_nav_cache_key('footer') do %>
+  <footer id="footer" class="pt-2 mx-auto border-top footer-spree" data-turbolinks-permanent>
+    <div class="container">
+      <div class="row d-none d-xl-flex border-top py-5 text-uppercase footer-spree-menu-links">
+        <% if spree_navigation_data.any? %>
+          <% spree_navigation_data.first(3).each do |root| %>
+            <div class="col-3">
+              <div class="footer-spree-label font-weight-bold">
+                <%= link_to root[:title], root[:url] %>
+              </div>
+              <% if  root[:items].present? %>
+                <% root[:items].each do |item| %>
+                  <div class="pt-2"><%= link_to item[:title], item[:url] %></div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+        <% if spree.respond_to?(:account_path) %>
+          <div class="col-3">
+            <div class="footer-spree-label font-weight-bold">
+              <%= Spree.t('nav_bar.my_account') %>
+            </div>
+            <div class="pt-2">
+              <%= link_to Spree.t('nav_bar.my_orders'), spree.account_path(anchor: "account-my-orders") %>
+            </div>
+            <div class="pt-4">
+              <p>
+                HASHTAG PP SPÓŁKA Z.O.O <br/>
+                KRS	0000815734 <br/>
+                NIP	6452563532 <br/>
+                Regon	385015575
+              </p>
+              <p class="mb-0">
+                <%= link_to Spree.t("returns_page.tos"), :tos %>
+              </p>
+              <p>
+                <%= link_to "Zwroty", :returns %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= render 'spree/shared/copyright' %>
+  </footer>
+<% end %>
