@@ -33,6 +33,10 @@ class Spree::Gateway::PayuPolska < Spree::Gateway
   preference :notify_url, :string
   preference :api_url, :string
 
+  def type
+    self.to_s
+  end
+
   def new(options = {})
     @merchant_pos_id = options[:merchant_pos_id]
     @client_secret = options[:client_secret]
