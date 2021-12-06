@@ -25,21 +25,23 @@ module Spree
 
       redirect_path = checkout_state_path(:payment)
       ActiveRecord::Base.transaction do
+        payment = order.payments.create!({
+          source: payment_method,
+          amount: order.total,
+          payment_method: payment_method
+        })
+
         response = payment_method.purchase(
-          order.total, 
+          order.total,
           build_purchase(
-            order, 
-            request, 
+            order,
+            request,
             items
           )
         )
+
+        payment.update!(intent_client_key: response["orderId"])
         
-        order.payments.create!({
-          source: payment_method,
-          amount: order.total,
-          intent_client_key: response["orderId"],
-          payment_method: payment_method
-        })
         redirect_path = response["redirectUri"]
       end
 
@@ -69,7 +71,7 @@ module Spree
 
     def build_purchase order, request, items
       { 
-        notifyUrl: payment_method.preferences[:notify_url],
+        notifyUrl: payment_method.preferences[:notify_url] + "?order=#{order.number}",
         merchantPosId: payment_method.preferences[:merchant_pos_id],
         description: "Hempchamp",
         referrer: request.env['HTTP_REFERER'],
