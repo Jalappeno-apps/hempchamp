@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     get "/zwroty", to: "returns#index", as: :returns
     get "/", to: "under_construction#index"
     get "home", to: "home#index"
+
+    resources :payu
   end
 end

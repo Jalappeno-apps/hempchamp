@@ -1,4 +1,48 @@
 <div class="text-center">
   <img width="150px" src="https://poland.payu.com/wp-content/uploads/sites/14/2020/05/PAYU_LOGO_LIME-990x640.png" />
+  <%= link_to("Pay Now", payu_index_path(payment_method_id: payment_method.id), method: :post, id: "paypal_button") %>
   <br/>
 </div>
+
+
+<script type="text/javascript">
+  
+  SpreePaypalExpress = {
+    updateSaveAndContinueVisibility: function() {
+      if (this.isButtonHidden()) {
+        $(this).trigger('hideSaveAndContinue')
+      } else {
+        $(this).trigger('showSaveAndContinue')
+      }
+    },
+    isButtonHidden: function () {
+      paymentMethod = this.checkedPaymentMethod();
+      return (!$('#use_existing_card_yes:checked').length && SpreePaypalExpress.paymentMethodID && paymentMethod.val() == SpreePaypalExpress.paymentMethodID);
+    },
+    checkedPaymentMethod: function() {
+      return $('div[data-hook="checkout_payment_step"] input[type="radio"][name="order[payments_attributes][][payment_method_id]"]:checked');
+    },
+    hideSaveAndContinue: function() {
+      document.getElementsByClassName("checkout-content-save-continue-button")[0].hide();
+    },
+    showSaveAndContinue: function() {
+      document.getElementsByClassName("checkout-content-save-continue-button")[0].show();
+    }
+  }
+
+  document.ready(function() {
+    button = document.getElementsByClassName("checkout-content-save-continue-button")[0];
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+
+    SpreePaypalExpress.updateSaveAndContinueVisibility();
+    paymentMethods = $('div[data-hook="checkout_payment_step"] input[type="radio"]').click(function (e) {
+      console.log("Clicked");
+      SpreePaypalExpress.updateSaveAndContinueVisibility();
+    });
+    console.log(paymentMethods);
+  })
+
+</script>

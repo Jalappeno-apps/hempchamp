@@ -12,12 +12,19 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.4.3'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
-gem 'spree', '~> 4.1'
-gem 'spree_gateway', '~> 3.9'
-gem 'spree_backend', '~> 4.1'
-gem 'spree_auth_devise', '~> 4.0.0'
+# gem 'spree', '~> 4.3'
+# gem 'spree_backend', '~> 4.3'
+# gem 'spree_auth_devise'
+# gem 'spree_emails'
+
+gem 'spree' # core and API
+gem 'spree_backend' # Rails admin panel (optional)
+gem 'spree_emails' # transactional emails (optional)
+gem 'spree_sample' # dummy data like products, taxons, etc
+gem 'spree_auth_devise', '~> 4.3' # Devise integration (optional)
+gem 'spree_i18n', '~> 5.0' # translation files (optional) 
 gem 'spree_frontend'
-gem 'spree_emails'
+gem 'spree_gateway'
 
 # gem 'spree_i18n', github: 'archetype2142/spree_i18n', branch: 'master'
 gem 'bootsnap', '>= 1.4.2', require: false

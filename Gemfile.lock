@@ -107,11 +107,6 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    deface (1.8.1)
-      nokogiri (>= 1.6)
-      polyglot
-      rails (>= 5.2)
-      rainbow (>= 2.1.0)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -125,6 +120,7 @@ GEM
     dotenv (2.7.6)
     erubi (1.10.0)
     execjs (2.8.1)
+    ffaker (2.20.0)
     ffi (1.15.4)
     flatpickr (4.6.6.0)
     friendly_id (5.4.2)
@@ -135,6 +131,7 @@ GEM
     highline (2.0.3)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    i18n_data (0.13.1)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
@@ -163,6 +160,9 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -191,7 +191,6 @@ GEM
     paranoia (2.4.3)
       activerecord (>= 4.0, < 6.2)
     pg (1.2.3)
-    polyglot (0.3.5)
     popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (4.3.10)
@@ -224,13 +223,15 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails-i18n (6.0.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 7)
     railties (6.0.4.1)
       actionpack (= 6.0.4.1)
       activesupport (= 6.0.4.1)
       method_source
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
-    rainbow (3.0.0)
     rake (13.0.6)
     ransack (2.4.2)
       activerecord (>= 5.2.4)
@@ -239,7 +240,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    regexp_parser (2.1.1)
+    regexp_parser (2.2.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -272,11 +273,10 @@ GEM
       rabl (~> 0.14, >= 0.14.2)
       responders
       spree_core (= 4.3.0)
-    spree_auth_devise (4.0.0)
-      deface (~> 1.0)
+    spree_auth_devise (4.4.2)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
-      spree_core (>= 3.1.0, < 5.0)
+      spree_core (>= 4.3.0.rc1)
       spree_extension
     spree_backend (4.3.0)
       babel-transpiler (~> 0.7)
@@ -346,6 +346,15 @@ GEM
     spree_gateway (3.9.4)
       spree_core (>= 3.7.0)
       spree_extension
+    spree_i18n (5.0.1)
+      i18n_data
+      kaminari-i18n
+      rails-i18n
+      spree_core (>= 4.2.0.rc3, < 5.0)
+      spree_extension
+    spree_sample (4.3.0)
+      ffaker (~> 2.9)
+      spree_core (>= 4.3.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -416,12 +425,14 @@ DEPENDENCIES
   rake (~> 13.0.6)
   sass-rails (>= 6)
   selenium-webdriver
-  spree (~> 4.1)
-  spree_auth_devise (~> 4.0.0)
-  spree_backend (~> 4.1)
+  spree
+  spree_auth_devise (~> 4.3)
+  spree_backend
   spree_emails
   spree_frontend
-  spree_gateway (~> 3.9)
+  spree_gateway
+  spree_i18n (~> 5.0)
+  spree_sample
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

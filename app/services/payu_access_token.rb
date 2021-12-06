@@ -2,9 +2,9 @@
 
 class PayuAccessToken
   class << self
-    def execute!
-      uri = URI.parse(ENV['PAYU_AUTH_URL'])
-      access_ask = "grant_type=client_credentials&client_id=#{ENV['PAYU_CLIENT_ID']}&client_secret=#{ENV['PAYU_CLIENT_SECRET']}"
+    def execute! auth_url, client_id, client_secret
+      uri = URI.parse(auth_url)
+      access_ask = "grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
 
       # Create the HTTP objects
       https = Net::HTTP.new(uri.host, uri.port)

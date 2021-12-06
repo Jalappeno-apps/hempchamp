@@ -1,17 +1,88 @@
 # frozen_string_literal: true
 
 module Spree
-  class PayuController < Spree::BaseController
+  class PayuController < StoreController
     def create
-      access_token = PayuAccessToken.execute!
+      order = current_order || raise(ActiveRecord::RecordNotFound)
+      items = order.line_items.map(&method(:line_item))
 
-      redirect = PayuCreateOrder.execute!(
-        params[:order],
-        access_token,
-        request.remote_ip
-      )
+      additional_adjustments = order.all_adjustments.additional
+      tax_adjustments = additional_adjustments.tax
+      shipping_adjustments = additional_adjustments.shipping
 
-      redirect_to redirect
+      additional_adjustments.eligible.each do |adjustment|
+        next if adjustment.amount.zero?
+        next if tax_adjustments.include?(adjustment) || shipping_adjustments.include?(adjustment)
+
+        items << {
+          name: adjustment.label,
+          quantity: 1,
+          unit_price: adjustment.amount
+        }
+      end
+
+      # payu_request = provider
+
+      redirect_path = checkout_state_path(:payment)
+      ActiveRecord::Base.transaction do
+        response = payment_method.purchase(
+          order.total, 
+          build_purchase(
+            order, 
+            request, 
+            items
+          )
+        )
+        
+        order.payments.create!({
+          source: payment_method,
+          amount: order.total,
+          intent_client_key: response["orderId"],
+          payment_method: payment_method
+        })
+        redirect_path = response["redirectUri"]
+      end
+
+      redirect_to redirect_path
+    end
+
+    def confirm
+      order = current_order || raise(ActiveRecord::RecordNotFound)
+      order.payments.create!({
+        source: Spree::PaypalExpressCheckout.create({
+          token: params[:token],
+          payer_id: params[:PayerID]
+        }),
+        amount: order.total,
+        payment_method: payment_method
+      })
+      order.next
+      if order.complete?
+        flash.notice = Spree.t(:order_processed_successfully)
+        flash[:order_completed] = true
+        session[:order_id] = nil
+        redirect_to completion_route(order)
+      else
+        redirect_to checkout_state_path(order.state)
+      end
+    end
+
+    def build_purchase order, request, items
+      { 
+        notifyUrl: payment_method.preferences[:notify_url],
+        merchantPosId: payment_method.preferences[:merchant_pos_id],
+        description: "Hempchamp",
+        referrer: request.env['HTTP_REFERER'],
+        user_agent: request.env['HTTP_USER_AGENT'],
+        ip: request.remote_ip,
+        customer: { 
+          first_name: order.bill_address.firstname,
+          last_name: order.bill_address.lastname,
+          email: order.email,
+          phone: order.bill_address.phone,
+          language: 'pl'
+        }, products: items
+      }
     end
 
     def store_return
@@ -48,5 +119,24 @@ module Spree
       end
       redirect_to request.referer, flash: { notice: notice }
     end
+
+    private
+    def provider
+      payment_method.provider
+    end
+
+    def payment_method
+      Spree::PaymentMethod.find(params[:payment_method_id])
+    end
+
+    def line_item(item)
+      {
+        name: item.product.name,
+        number: item.variant.sku,
+        quantity: item.quantity,
+        unit_price: item.price
+      }
+    end
+
   end
 end

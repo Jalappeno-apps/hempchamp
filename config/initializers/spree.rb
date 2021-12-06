@@ -39,3 +39,9 @@ Spree.user_class = "Spree::User"
 
 # Rails.application.config.spree.payment_methods << Spree::PaymentMethod::Payu
 Spree::PermittedAttributes.address_attributes << :nip
+# Rails.application.config.spree.payment_methods << Spree::Gateway::PayuPolskaGateway
+Spree::Auth::Config[:registration_step] = false
+
+Rails.application.config.after_initialize do
+  Rails.application.config.spree.payment_methods << Spree::Gateway::PayuPolska
+end
