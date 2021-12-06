@@ -25,7 +25,7 @@ require 'net/http'
 class Spree::Gateway::PayuPolska < Spree::Gateway
   attr_accessor :client_secret, :notify_url, :api_url, :options, :app_token
 
-  self.inheritance_column = :_type_disabled
+  self.inheritance_column = :type
 
   preference :client_id, :string
   preference :merchant_pos_id, :string
@@ -34,7 +34,7 @@ class Spree::Gateway::PayuPolska < Spree::Gateway
   preference :api_url, :string
 
   def type
-    self
+    self.to_s
   end
 
   def new(options = {})
