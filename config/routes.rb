@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   Spree::Core::Engine.add_routes do
     get "/polityka-prywatnosci", to: "tos#index", as: :tos
     get "/zwroty", to: "returns#index", as: :returns
-    get "/", to: "under_construction#index"
     get "home", to: "home#index"
 
     resources :payu
