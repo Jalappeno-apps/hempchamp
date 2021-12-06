@@ -34,7 +34,7 @@ class Spree::Gateway::PayuPolska < Spree::Gateway
   preference :api_url, :string
 
   def type
-    self.to_s
+    self
   end
 
   def new(options = {})
